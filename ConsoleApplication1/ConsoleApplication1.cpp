@@ -2,12 +2,29 @@
 //
 
 #include <iostream>
+#include <string>
+
 
 int main()
 {
-    
-    for (int i = 0; i < 100; i++)
-        std::cout << "Hello World!" << i << " \n";
-    
-    
+    std::string s = "Hello World!";
+    std::string r = s;
+    std::reverse(r.begin(), r.end());
+
+    for (int i = 0; i < 100; ++i)
+    {
+
+        const std::string& out = (i % 2 == 0) ? s : r;
+        std::cout << out << ' ' << i << std::endl
+            ;
+    }
+
+    return 0;
 }
+/* auto forward = std::string("Hello World!");
+auto  reverse = forward;
+
+std::reverse(reverse.begin(), reverse.end());
+
+
+*/
